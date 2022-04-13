@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>여행 리스트</h1>
+    <ul>
+      <!-- v-for로 object 출력해보기 name distance 모두 따로 -->
+      <li>
+
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        travelList: [{
+            name: '강릉',
+            distance: '차로 3시간'
+          },
+          {
+            name: '부산',
+            distance: '차로 5시간'
+          },
+          {
+            name: '춘천',
+            distance: '차로 2시간'
+          },
+          {
+            name: '타이베이',
+            distance: '비행기로 3시간'
+          },
+          {
+            name: '마닐라',
+            distance: '비행기로 5시간'
+          },
+          {
+            name: '스페인',
+            distance: '비행기로 17시간'
+          },
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>

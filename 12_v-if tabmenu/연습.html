@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+*{margin: 0;padding: 0;box-sizing: border-box;}
+#app {
+  margin:0 20px;
+  text-align: center;
+}
+h2 {
+  margin:20px 0;
+}
+.btn_wrap {
+
+  display: flex;
+}
+.tab{
+  display: block;
+  width:50%;
+  border-radius: 10px 10px 0 0;
+  background-color: rgb(221, 221, 221);
+}
+.tab.On{
+  background-color: blueviolet;
+  color:#fff
+}
+.box {
+  display: flex;
+  background-color: azure;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>
+      tabmenu 만들기
+    </h2>
+    <div class="btn_wrap" >
+      <span class="tab"  v-for="(tab,i) in tabs" :key="i"  v-bind:class="{ On:tab===selectTab}" @click="tabOpen(tab)" >
+          {{tab}}
+      </span>
+    </div>
+    <div  v-for="(tab,i) in tabs" :key="i" >
+      <div class="box box1" v-if="selectTab==tabs[i]">box{{i+1}}</div>
+    </div>
+    <!-- <div class="box box1" v-if="selectTab==tabs[0]">box1</div>
+    <div class="box box2" v-if="selectTab==tabs[1]">box2</div>
+    <div class="box box3"  v-if="selectTab==tabs[2]">box3</div> -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        tabs:['menu1','menu2','menu3'],
+      selectTab :'menu1',
+      active:''
+      },
+      methods: {
+        tabOpen(tab){
+          this.selectTab=tab         
+
+          console.log(this.selectTab);
+
+
+        }
+      },
+    })
+  </script>
+</body>
+</html>

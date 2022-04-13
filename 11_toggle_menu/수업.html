@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button.open {
+      display: block;
+      border: none;
+      position: relative;
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+      background-color: transparent;
+    }
+
+    button.open span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 0.3rem;
+      background-color: blue;
+      top: 0;
+      transition: .3s;
+    }
+
+    button.open span:nth-child(1) {
+      top: 0;
+    }
+
+    button.open span:nth-child(2) {
+      top: 1rem;
+    }
+
+    button.open span:nth-child(3) {
+      top: 2rem;
+    }
+
+    #app.On button.open span:nth-child(1) {
+      top: 1rem;
+      transform: rotate(45deg);
+    }
+
+    #app.On button.open span:nth-child(2) {
+      transform: translate(100%);
+      opacity: 0;
+    }
+
+    #app.On button.open span:nth-child(3) {
+      top: 1rem;
+      transform: rotate(-45deg);
+    }
+
+    .modal {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      top: 50%;
+      left: -110%;
+      background-color: antiquewhite;
+      transform: translate(-50%, -50%);
+      padding: 30px;
+      transition: all .3s;
+    }
+
+    #app.On .modal {
+      left: 50%;
+    }
+
+    button.On {
+      background-color: blueviolet;
+      color: #fff
+    }
+  </style>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <!--:class={클래스이름:데이터이름=boolean}  -->
+  <div id="app" :class="{On:modal==true}">
+    <nav>
+
+      <h2>
+        toggle 모달창 만들기
+      </h2>
+      <button v-on:click="modalToggle" class="open">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <div class="modal">
+      popup입니다.
+
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        modal: false,
+      },
+      methods: {
+        modalToggle() {
+          if (!this.modal) {
+            this.modal = true
+
+          } else {
+            this.modal = false
+          }
+        },
+
+      },
+    })
+  </script>
+</body>
+
+</html>

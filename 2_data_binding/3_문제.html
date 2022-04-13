@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            {{msg}}
+        </div>
+        <div>
+        <!-- 메세지 거꾸로 넣기    split,revers,join함수 이용하기-->
+        </div>
+        <div>
+            <!-- replace(oldtext,newtext) 함수 이용하여 이름 변경 하기 -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: '대우 vue 홍길동입니다.'
+            }
+        })
+    </script>
+</body>
+
+</html>

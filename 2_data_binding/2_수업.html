@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>오늘의 기분:{{feeling[0]}}</p>
+    <h2>오늘의 식사</h2>
+    <ul>
+      <li>{{food.아침}}</li>
+      <li>{{food.점심}}</li>
+    </ul>
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        // array
+        feeling:['유쾌','상쾌','통쾌','우울','기쁨'],
+        // object
+        food:{
+          아침:'샐러드',
+          점심:'볶음밥',
+          저녁:'마라탕',
+          야식:'치킨 맥주'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

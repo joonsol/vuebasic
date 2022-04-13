@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    #app {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dark {
+      color: yellow;
+      background-color: #000;
+    }
+
+    .dark button {
+      color: #000;
+      background-color: yellow
+    }
+
+    h1 {
+      font-size: 5em;
+    }
+
+    .light {
+      background-color: yellow;
+      color: black
+    }
+
+    .light button {
+      color: yellow;
+      background-color: #000
+    }
+
+    button {
+      border: 0;
+      font-size: 1em;
+      padding: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- #app thema class binding -->
+  <div id="app" >
+    <h1>{{thema}}</h1>
+    <!-- methods 등록해보기 -->
+    <button >
+      thema change
+    </button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        thema: 'dark',
+        isActive: false
+      },
+      methods: {
+        changeThema() {
+          // 조건문 이용 class binding
+          // if () {
+
+            // this.~ 로 data 접근 
+          
+          // } else {
+            // this.thema = 'dark'
+          }
+        }
+    })
+  </script>
+</body>
+
+</html>

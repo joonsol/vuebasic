@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <span :title="msg2">마우스를 올려보세요</span>
+    <div> {{msg1}}</div>
+    <a :href="link">{{title}}</a>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        msg1: 'hello vue',
+        msg2: '오늘은' + new Date() + '입니다',
+        link: 'https://www.naver.com/',
+        title: '네이버 링크입니다.'
+      }
+    })
+  </script>
+</body>
+
+</html>

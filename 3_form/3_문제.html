@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <label for="addText">입력하세요</label>
+    <!-- v-model 등록하기 -->
+    <input type="text" id="addText" >
+    <!-- event 등록 pushText -->
+    <button>입력</button>
+    <div>
+      {{addTextArray}}
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        addText: '',
+        addTextArray: []
+      },
+      methods: {
+        pushText() {
+          // this.~ 를 이용 push함수 이용, 추가해보기
+
+          // this.addText 빈값 만들기
+
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
